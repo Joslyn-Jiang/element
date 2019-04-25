@@ -66,9 +66,24 @@
       :picker-options="pickerOptions">
     </el-date-picker>
   </div>
+  <div class="nav">
+  <ul>
+      <li><a href="">啦啦啦啦</a></li>
+      <li><a href="">11111</a></li>
+      <li><a href="">22222</a></li>
+  </ul>
+  </div>
+  <div id="main">
+  <p>
+      啦啦啦
+  </p>
+    <p><a href="">111111111111</a></p>
+    <p class="redbox"> 2222222222</p>
+  </div>
+  
   </div>
 </template>
-<script>
+<script >
 export default {
   name: 'index',
   data() {
@@ -125,5 +140,60 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss" scoped>
+.nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li { display: inline-block;}
+   
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        color:black;
+    }
+}
+#main {
+  width: 97%;
+  height:10px;
+  border: 1px;
+  p, div {
+    font-size: 2em;
+    a { font-weight: bold; }
+  }
+
+}
+#main p .redbox{
+    background-color:#00ff00;
+    color: #000000;
+}
+// #main p {
+//     border: solid 1px;
+//     color: #00ff00;
+//     width:97%;
+//     height: 15px;
+
+//     .redbox {
+//         background-color: #ff0000;
+//         color: #000000; 
+//     }
+// }
+#main p {
+    color:#00ff00;
+    width: 97%;
+}
+#main p .redbox {
+    background-color: #ff0000;
+    color: #000;
+}
+a {
+  font-weight: bold;
+  text-decoration: none;
+  &:hover { color:brown; }
+  body.firefox & { font-weight: normal; }
+}
 </style>

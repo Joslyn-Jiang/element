@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import index from '@/views/index/index'
+import Index from '@/views/index/index'
+import New from '@/views/new/new'
 
 Vue.use(Router)
 
@@ -10,7 +11,13 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: index
+      component: Index
+    },
+    {
+      path: '/new',
+      name: 'new',
+      component: New
     }
   ]
 })
+
