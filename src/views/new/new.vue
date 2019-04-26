@@ -22,6 +22,9 @@
 <div class="item-2">2</div>
 <div class="item-4">4</div>
 <div class="item-6">6</div>
+<div class="color"></div>
+<div id="sildebar"></div>
+<div id="est"></div>
     </div>    
 </template>
 <script>
@@ -156,4 +159,41 @@ $i:6;
     .item-#{$i} {width:2em*$i;}
     $i: $i - 2;
 }
+@mixin sexy-border($color, $width){
+    border: {
+        color: $color;
+        width: $width;
+        style: dashed;
+    }
+}
+p {@include sexy-border(yellow,2px)}
+$color: white;
+@mixin colors($color: blue) {
+    background-color: $color;
+    @content;
+    border-color: $color;
+}
+.color {
+    @include colors { color: $color; }
+    width: 100px;
+    height: 20px;
+}
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n){
+    @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+#sildebar { 
+    width: grid-width(5);
+    height: grid-width(5);
+    border: 1px solid red;
+    }
+#est {
+    color:#fff;
+    background-color:#000;
+}    
+    #est p {
+    width: 10em;}
+
 </style>
