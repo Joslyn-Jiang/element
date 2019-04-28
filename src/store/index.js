@@ -3,54 +3,39 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 const state={
-    //要设置的全局访问的state对象
-    showFooter:true,
-    //要设置的初始属性值
-    changableNum:0
+   count:1
 };
 
 const getters = {
     //实时监听state值的变化（最新状态）
-    isShow(state) {
+    count(state) {
         //承载变化的showFooter的值
-        return state.showFooter
-    },
-    getChangeNum(){
-        //承载变化的changableNum的值
-        return state.changableNum
+        return state.count +=100;
     }
 }
 
 const mutations = {
-    show(state) {
-        //自定义改变state初始值的方法，这里面的参数除了state之外还可以再传额外的参数(变量或对象);
-        state.showFooter = true;
-    },
-    hide(state) {
-        state.showFooter = false;
-    },
-    newNum(state,sum){
-        state.changableNum+=sum;
-    }
+   add(state,n){
+       state.count+=n
+   },
+   reduce(state){
+       state.count-=1
+   }
 }
 
-const actions = {
-    hideFooter(context){
-        //自定义触发mutations里函数的方法，context与store实例具有相同方法和属性
-        context.commit('hide');
+const actions ={
+    addplus(context){
+        context.commit('add',10)
     },
-    showFooter(context){
-        context.commit('show');
-    },
-    getNewNum(context,num){
-        context.commit('newNum',num)
+    subplus({commit}){
+        commit('sub')
     }
 }
 
 const store = new Vuex.Store({
     state,
-    getters,
     mutations,
+    getters,
     actions
 });
 

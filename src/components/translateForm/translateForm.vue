@@ -27,7 +27,9 @@ export default {
 <style>
 .submit{
     width: 100px;
-    height: 20px;
-    line-height: 20px
+    height: 25px;
+}
+button{
+    padding:0;
 }
 </style>

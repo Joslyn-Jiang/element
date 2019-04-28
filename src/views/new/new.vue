@@ -99,7 +99,7 @@ p.#{$name} {
 }
 @mixin button {  
     font-size: 1em;  
-    padding: 0.5em 1.0em;  
+    // padding: 0.5em 1.0em;  
     text-decoration: none;  
     background-color: black;  
     height:$width;

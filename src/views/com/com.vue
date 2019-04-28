@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-    name:'vuex',
+    name:'com',
     data (){
         return {
             logoMsg:'Wise'

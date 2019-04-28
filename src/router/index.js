@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import Index from '@/views/index/index'
 import New from '@/views/new/new'
 import Com from '@/views/com/com'
+import Vuex from '@/views/vuex/vuex'
 
 Vue.use(Router)
 
@@ -20,9 +20,14 @@ export default new Router({
       component: New
     },{
       path: '/com',
-      name:'com',
+      name: 'com',
       component:Com
+    },{
+      path: '/vuex',
+      name: 'vuex',
+      component:Vuex
     }
+
   ]
 })
 
