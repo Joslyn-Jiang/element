@@ -2,19 +2,22 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import store from './store'
 import router from './router'
 import ElementUI from 'element-ui'
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
-import store from './store'
-import load from '@/components/load/load.js'
-import sjld from './components/sjld/sjld.js'
+import Box from './components/box'
+import TranslateForm from './components/translateForm'
+import ShowCity from './components/showCity'
 
-Vue.config.productionTip = false
+Vue.use(ShowCity)
+Vue.use(TranslateForm)
 Vue.use(ElementUI)
 Vue.use(Element)
-Vue.use(load)
-Vue.use(sjld)
+Vue.use(Box)
+Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({
